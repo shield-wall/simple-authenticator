@@ -6,6 +6,6 @@ services:
   _defaults:
     autowire: true
     autoconfigure: true
-
-  string $simpleAuthenticatorRouteSuccess: '%shield_w4ll.simple_authenticator.route.redirect_success%'
-  string $simpleAuthenticatorRouteFailure: '%shield_w4ll.simple_authenticator.route.redirect_failure%'
+    bind:
+      string $simpleAuthenticatorRouteSuccess: '%shield_w4ll.simple_authenticator.route.redirect_success%'
+      string $simpleAuthenticatorRouteFailure: '%shield_w4ll.simple_authenticator.route.redirect_failure%'

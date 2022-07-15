@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ShieldW4ll\SimpleAuthenticator\Repository;
+namespace ShieldW4ll\SimpleAuthenticator\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;

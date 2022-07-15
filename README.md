@@ -6,7 +6,7 @@ It's a simple symfony authenticator, for you be able to log in just with email.
 ### Install
 
 ```shell
-composer req --dev shield-w4all/simple-authenticator
+composer req --dev shield-w4ll/simple-authenticator
 ```
 
 > **Note**
@@ -15,32 +15,41 @@ composer req --dev shield-w4all/simple-authenticator
 ### Configuration
 
 ```yaml
+#config/packages/shield_w4ll.yaml
+simple_authenticator:
+  route:
+    redirect_success: 'app_user_area_example'
+    redirect_failure: 'app_login_example'
+
 when@dev:
-    shield_w4ll:
-      simple_authenticator:
-        route:
-          redirect_success: 'app_user_area_example'
-          redirect_failure: 'app_login_example'
-  
+  security:
+    firewalls:
+      main:
+        custom_authenticators:
+          - ShieldW4ll\SimpleAuthenticator\Security\EmailAuthenticator
 ```
 
-Security
 ```yaml
-#config/packages/security.yaml
-when@dev:
-    security:
-      firewalls:
-        main:
-          custom_authenticators:
-            - ShieldW4ll\SimpleAuthenticator\Security\EmailAuthenticator
+#config/routes/shield_w4ll.yaml
+simple_authenticator_login:
+  prefix: ^/
+  path: /simple_authenticator/login
 ```
-
-Form
+```yaml
+#config/service.yaml
+ShieldW4ll\SimpleAuthenticator\Security\EmailAuthenticator:
+        arguments:
+            - '@Symfony\Component\Routing\Generator\UrlGeneratorInterface'
+            - '@App\Repository\UserRepository'
+            - '%shield_w4ll.simple_authenticator.route.redirect_success%'
+            - '%shield_w4ll.simple_authenticator.route.redirect_failure%'
+```
 ```php
+//YourController.php
 public function yourAction()
 {
         $simpleAuthenticatorForm = $this->createForm(SimpleAuthenticatorType::class, null, [
-            'action' => $this->generateUrl('app_login_simple'),
+            'action' => $this->generateUrl('simple_authenticator_login'),
         ]);
         $simpleAuthenticatorFromView = $simpleAuthenticatorForm->createView();
 
@@ -49,5 +58,24 @@ public function yourAction()
         ]);
 }
 
+//your_file.html.twig
+{{ form(simpleAuthenticatorFrom) }}
+```
+
+Repository
+```php
+//src/Repository/UserRepository.php
+class UserRepository extends ServiceEntityRepository implements EmailRepositoryInterface
+{
+    public function findOneByEmail(string $email): UserInterface
+    {
+        return $this->findOneBy(['email' => $email]);
+    }
+}
 
 ```
+
+TODO
+- need to see someway to get the route name from controller `simple_authenticator_login`
+- import route as resource
+- service should be declared automatically.

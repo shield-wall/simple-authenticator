@@ -11,7 +11,7 @@ class SimpleAuthenticatorExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
-        $configuration = new Configuration();
+        $configuration = $this->getConfiguration($configs, $container);
         $this->processConfiguration($configuration, $configs);
 
         $loader = new YamlFileLoader($container, new FileLocator(dirname(__DIR__) . '/Resources/config'));
@@ -20,7 +20,7 @@ class SimpleAuthenticatorExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $routes = $config['shield_w4ll']['simple_authenticator']['route'];
+        $routes = $config['route'];
 
         $container->setParameter('shield_w4ll.simple_authenticator.route.redirect_success', $routes['redirect_success']);
         $container->setParameter('shield_w4ll.simple_authenticator.route.redirect_failure', $routes['redirect_failure']);
