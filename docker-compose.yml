@@ -1,0 +1,6 @@
+version: '3.8'
+services:
+  php:
+    image: 3lever/php:8.1.7-fpm-postgresql-dev
+    volumes:
+      - ./:/app

@@ -1,0 +1,4 @@
+when@dev:
+  simple_authenticator_login:
+    prefix: ^/
+    path: /simple_authenticator/login
