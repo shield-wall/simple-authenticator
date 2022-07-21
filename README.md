@@ -6,7 +6,7 @@ It's a simple symfony authenticator, for you be able to log in just with email.
 ### Install
 
 ```shell
-composer req --dev shield-w4ll/simple-authenticator
+composer req shield-w4ll/simple-authenticator
 ```
 
 > **Note**
@@ -16,12 +16,12 @@ composer req --dev shield-w4ll/simple-authenticator
 
 ```yaml
 #config/packages/shield_w4ll.yaml
-simple_authenticator:
-  route:
-    redirect_success: 'app_user_area_example'
-    redirect_failure: 'app_login_example'
-
 when@dev:
+  simple_authenticator:
+    route:
+      redirect_success: 'profile_edit'
+      redirect_failure: 'app_login'
+
   security:
     firewalls:
       main:
