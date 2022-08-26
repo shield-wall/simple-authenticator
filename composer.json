@@ -1,5 +1,5 @@
 {
-    "name": "shield-w4ll/simple-authenticator",
+    "name": "shield-wall/simple-authenticator",
     "description": "Simple symfony authenticator",
     "type": "library",
     "license": "MIT",
