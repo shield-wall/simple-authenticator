@@ -26,7 +26,7 @@ when@dev:
     firewalls:
       main:
         custom_authenticators:
-          - ShieldW4ll\SimpleAuthenticator\Security\EmailAuthenticator
+          - ShieldWall\SimpleAuthenticator\Security\EmailAuthenticator
 ```
 
 ```yaml
@@ -37,7 +37,7 @@ simple_authenticator_login:
 ```
 ```yaml
 #config/service.yaml
-ShieldW4ll\SimpleAuthenticator\Security\EmailAuthenticator:
+ShieldWall\SimpleAuthenticator\Security\EmailAuthenticator:
         arguments:
             - '@Symfony\Component\Routing\Generator\UrlGeneratorInterface'
             - '@App\Repository\UserRepository'
