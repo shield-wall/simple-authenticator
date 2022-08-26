@@ -1,11 +1,11 @@
 parameters:
-  shield_w4ll.simple_authenticator.route.redirect_success: ~
-  shield_w4ll.simple_authenticator.route.redirect_failure: ~
+  shield_wall.simple_authenticator.route.redirect_success: ~
+  shield_wall.simple_authenticator.route.redirect_failure: ~
 
 services:
   _defaults:
     autowire: true
     autoconfigure: true
     bind:
-      string $simpleAuthenticatorRouteSuccess: '%shield_w4ll.simple_authenticator.route.redirect_success%'
-      string $simpleAuthenticatorRouteFailure: '%shield_w4ll.simple_authenticator.route.redirect_failure%'
+      string $simpleAuthenticatorRouteSuccess: '%shield_wall.simple_authenticator.route.redirect_success%'
+      string $simpleAuthenticatorRouteFailure: '%shield_wall.simple_authenticator.route.redirect_failure%'

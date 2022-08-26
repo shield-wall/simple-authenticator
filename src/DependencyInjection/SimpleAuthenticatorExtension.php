@@ -22,7 +22,7 @@ class SimpleAuthenticatorExtension extends Extension
 
         $routes = $config['route'];
 
-        $container->setParameter('shield_w4ll.simple_authenticator.route.redirect_success', $routes['redirect_success']);
-        $container->setParameter('shield_w4ll.simple_authenticator.route.redirect_failure', $routes['redirect_failure']);
+        $container->setParameter('shield_wall.simple_authenticator.route.redirect_success', $routes['redirect_success']);
+        $container->setParameter('shield_wall.simple_authenticator.route.redirect_failure', $routes['redirect_failure']);
     }
 }

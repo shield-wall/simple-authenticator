@@ -11,7 +11,7 @@ class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder('shield_w4ll');
+        $treeBuilder = new TreeBuilder('shield_wall');
 
         $treeBuilder->getRootNode()
             ->children()

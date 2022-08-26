@@ -15,7 +15,7 @@ composer req shield-w4ll/simple-authenticator
 ### Configuration
 
 ```yaml
-#config/packages/shield_w4ll.yaml
+#config/packages/shield_wall.yaml
 when@dev:
   simple_authenticator:
     route:
@@ -30,7 +30,7 @@ when@dev:
 ```
 
 ```yaml
-#config/routes/shield_w4ll.yaml
+#config/routes/shield_wall.yaml
 simple_authenticator_login:
   prefix: ^/
   path: /simple_authenticator/login
@@ -41,8 +41,8 @@ ShieldWall\SimpleAuthenticator\Security\EmailAuthenticator:
         arguments:
             - '@Symfony\Component\Routing\Generator\UrlGeneratorInterface'
             - '@App\Repository\UserRepository'
-            - '%shield_w4ll.simple_authenticator.route.redirect_success%'
-            - '%shield_w4ll.simple_authenticator.route.redirect_failure%'
+            - '%shield_wall.simple_authenticator.route.redirect_success%'
+            - '%shield_wall.simple_authenticator.route.redirect_failure%'
 ```
 ```php
 //YourController.php
