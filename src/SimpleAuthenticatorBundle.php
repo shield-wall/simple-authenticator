@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ShieldW4ll\SimpleAuthenticator;
+namespace ShieldWall\SimpleAuthenticator;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

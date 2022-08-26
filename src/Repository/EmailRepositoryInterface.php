@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ShieldW4ll\SimpleAuthenticator\Repository;
+namespace ShieldWall\SimpleAuthenticator\Repository;
 
 use Symfony\Component\Security\Core\User\UserInterface;
 

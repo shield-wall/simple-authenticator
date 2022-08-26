@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ShieldW4ll\SimpleAuthenticator\Security;
+namespace ShieldWall\SimpleAuthenticator\Security;
 
-use ShieldW4ll\SimpleAuthenticator\Repository\EmailRepositoryInterface;
+use ShieldWall\SimpleAuthenticator\Repository\EmailRepositoryInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

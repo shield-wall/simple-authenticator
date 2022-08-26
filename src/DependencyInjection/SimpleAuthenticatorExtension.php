@@ -1,6 +1,6 @@
 <?php
 
-namespace ShieldW4ll\SimpleAuthenticator\DependencyInjection;
+namespace ShieldWall\SimpleAuthenticator\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
